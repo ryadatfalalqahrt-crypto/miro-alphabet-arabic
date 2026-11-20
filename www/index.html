@@ -17,69 +17,66 @@
     }
     header {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 12px 20px;
+      padding: 12px 18px;
       background: #FF9F1C; color: white;
       box-shadow: 0 4px 12px rgba(0,0,0,0.12);
       position: sticky; top: 0; z-index: 100;
+      gap: 8px;
     }
     .btn {
       background: #2EC4B6; color: white; border: none;
-      border-radius: 18px; padding: 10px 20px;
-      font-family: 'Cairo', sans-serif; font-size: 1.1rem; font-weight: 700;
+      border-radius: 18px; padding: 10px 16px;
+      font-family: 'Cairo', sans-serif; font-size: 1rem; font-weight: 700;
       cursor: pointer; box-shadow: 0 4px 0 #1B8A7E;
       transition: transform 0.1s;
     }
     .btn:active { transform: translateY(3px); box-shadow: 0 1px 0 #1B8A7E; }
     .btn-orange { background: #FF9F1C; box-shadow: 0 4px 0 #C97600; }
     .btn-pink { background: #E71D36; box-shadow: 0 4px 0 #A81023; }
-    .screen { display: none; padding: 20px; max-width: 900px; margin: 0 auto; text-align: center; }
-    .screen.active { display: block; animation: fadeIn 0.3s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: scale(1); } }
-    
-    /* Miro Mascot */
-    .miro-box {
-      display: inline-flex; align-items: center; gap: 15px;
-      background: white; padding: 12px 24px; border-radius: 28px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08); margin-bottom: 20px;
-      border: 3px solid #FFBF69;
-    }
-    .miro-avatar { font-size: 3.5rem; animation: bounce 2s infinite; }
-    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .screen { display: none; padding: 18px; max-width: 900px; margin: 0 auto; text-align: center; }
+    .screen.active { display: block; animation: fadeIn 0.25s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
 
-    /* Map Grid */
+    .miro-box {
+      display: flex; align-items: center; gap: 14px;
+      background: white; padding: 14px 20px; border-radius: 26px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08); margin: 0 auto 18px;
+      border: 3px solid #FFBF69; max-width: 680px;
+    }
+    .miro-avatar { font-size: 3.4rem; animation: bounce 2s infinite; flex-shrink: 0; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+
     .map-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px; margin-top: 15px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px; margin-top: 12px;
     }
     .station-card {
-      background: white; border-radius: 24px; padding: 24px 16px;
+      background: white; border-radius: 24px; padding: 22px 14px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       border: 4px solid #CBF3F0; cursor: pointer;
       transition: transform 0.2s;
     }
-    .station-card:hover { transform: translateY(-5px); border-color: #2EC4B6; }
-    .station-icon { font-size: 3.5rem; margin-bottom: 10px; }
-    .station-title { font-size: 1.35rem; font-weight: 900; color: #011627; }
+    .station-card:active { transform: scale(0.97); }
+    .station-icon { font-size: 3.3rem; margin-bottom: 8px; }
+    .station-title { font-size: 1.25rem; font-weight: 900; color: #011627; }
 
-    /* Letters Grid */
     .letters-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
       gap: 12px;
     }
     .letter-tile {
-      background: white; border-radius: 20px; padding: 14px 8px;
+      background: white; border-radius: 20px; padding: 12px 6px;
       box-shadow: 0 5px 0 #E0C097; border: 3px solid #FFBF69;
       cursor: pointer; transition: 0.15s;
     }
     .letter-tile:active { transform: scale(0.94); }
-    .letter-char { font-size: 2.4rem; font-weight: 900; color: #E71D36; }
-    .letter-word { font-size: 0.95rem; font-weight: 700; color: #555; }
+    .letter-char { font-size: 2.3rem; font-weight: 900; color: #E71D36; }
+    .letter-word { font-size: 0.9rem; font-weight: 700; color: #555; }
 
-    /* Balloons */
     .balloon-arena {
-      position: relative; height: 360px; background: #E0F7FA;
+      position: relative; height: 350px; background: #E0F7FA;
       border-radius: 24px; overflow: hidden; border: 4px solid #4DD0E1;
-      margin-top: 15px;
+      margin-top: 14px;
     }
     .balloon {
       position: absolute; bottom: -90px; width: 78px; height: 92px;
@@ -89,22 +86,26 @@
       cursor: pointer; box-shadow: inset -6px -6px 12px rgba(0,0,0,0.15);
       animation: floatUp linear forwards;
     }
-    @keyframes floatUp { to { transform: translateY(-480px); } }
+    @keyframes floatUp { to { transform: translateY(-470px); } }
 
-    /* Quiz Options */
-    .options-row { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin-top: 20px; }
+    .options-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 18px; }
     .opt-card {
       background: white; border: 4px solid #FFBF69; border-radius: 24px;
-      width: 130px; height: 130px; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; font-size: 3rem; font-weight: 900;
+      width: 124px; height: 124px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; font-size: 2.9rem; font-weight: 900;
       cursor: pointer; box-shadow: 0 6px 0 #E0A858;
     }
     .opt-card:active { transform: translateY(4px); }
 
-    /* Canvas */
     canvas {
       background: #FFFDF9; border: 8px solid #8D5B4C; border-radius: 20px;
       touch-action: none; max-width: 100%; box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .voice-banner {
+      background: #FFF3CD; border: 2px solid #FFBF69; color: #5A3E1B;
+      border-radius: 16px; padding: 10px 14px; margin-bottom: 14px;
+      font-size: 0.95rem; font-weight: 700; display: none;
     }
   </style>
 </head>
@@ -112,18 +113,22 @@
 
 <header>
   <button class="btn btn-orange" onclick="goHome()">🏠 الخريطة</button>
-  <div style="font-size: 1.25rem; font-weight: 900;">⭐ النجوم: <span id="starCount">0</span></div>
+  <div style="font-size: 1.15rem; font-weight: 900;">⭐ النجوم: <span id="starCount">0</span></div>
   <button class="btn" onclick="toggleMute()" id="muteBtn">🔊 الصوت</button>
 </header>
 
-<!-- شاشة البداية والخريطة -->
 <div id="screen-home" class="screen active">
+  <div id="ttsWarning" class="voice-banner">
+    💡 محرك النطق العربي على الهاتف غير مفعّل حاليًا — يمكنكِ تفعيله من إعدادات الهاتف ليقرأ ميرو الكلمات بصوت عربي، أو الاستماع للأصوات المدمجة فورًا.
+  </div>
+
   <div class="miro-box">
-    <div class="miro-avatar">🦁</div>
-    <div style="text-align: right;">
-      <div style="font-size: 1.4rem; font-weight: 900; color: #E71D36;">أهلاً بك في عالم ميرو!</div>
-      <div id="miroSpeech" style="font-size: 1.05rem;">اختر المحطة التي تحب أن تلعب فيها اليوم</div>
+    <div class="miro-avatar" onclick="miroGreet()">🦁</div>
+    <div style="text-align: right; flex: 1;">
+      <div style="font-size: 1.35rem; font-weight: 900; color: #E71D36;">مرحباً بك في عالم ميرو!</div>
+      <div id="miroSpeech" style="font-size: 1.05rem; font-weight: 700;">أنا ميرو الأسد الصغير! اضغط عليّ أو اختر محطة لنبدأ اللعب.</div>
     </div>
+    <button class="btn" onclick="miroGreet()">🗣️ تكلّم يا ميرو</button>
   </div>
 
   <div class="map-grid">
@@ -154,30 +159,27 @@
   </div>
 </div>
 
-<!-- 1. جزيرة الحروف -->
 <div id="screen-island" class="screen">
-  <h2>🏝️ اضغط على أي حرف لتسمع صوته وكلمته</h2>
+  <h2>🏝️ اضغط على أي حرف ليقوله ميرو</h2>
+  <div id="islandBanner" style="font-size: 1.5rem; font-weight: 900; color: #2EC4B6; min-height: 44px; margin-bottom: 10px;"></div>
   <div class="letters-grid" id="lettersGrid"></div>
 </div>
 
-<!-- 2. بالونات الحروف -->
 <div id="screen-balloons" class="screen">
   <h2 id="balloonPrompt">🎈 فرقع بالونة حرف: <span style="color:#E71D36;font-size:2rem;" id="targetBalloonLetter">أ</span></h2>
-  <button class="btn" onclick="speakTargetBalloon()">🔊 اسمع الحرف مرة أخرى</button>
+  <button class="btn" onclick="speakTargetBalloon()">🗣️ اسمع ميرو مرة أخرى</button>
   <div class="balloon-arena" id="balloonArena"></div>
 </div>
 
-<!-- 3. قطار الأصوات -->
 <div id="screen-train" class="screen">
-  <h2>🚂 ساعد ميرو في تحميل الحرف الأول للصورة</h2>
+  <h2>🚂 ساعد ميرو في اختيار الحرف الأول</h2>
   <div style="font-size: 5rem; margin: 10px;" id="trainEmoji">🍎</div>
   <div style="font-size: 1.5rem; font-weight: 900;" id="trainWord">تفاحة</div>
   <div class="options-row" id="trainOptions"></div>
 </div>
 
-<!-- 4. سبورة التتبع والتلوين -->
 <div id="screen-board" class="screen">
-  <h2>🎨 لوّن وتتبّع الحرف بإصبعك: <span id="boardLetterLabel" style="color:#E71D36;">أ</span></h2>
+  <h2>🎨 تتبّع ولوّن الحرف بإصبعك: <span id="boardLetterLabel" style="color:#E71D36;">أ</span></h2>
   <div style="margin-bottom: 10px;">
     <button class="btn" onclick="nextBoardLetter()">الحرف التالي ⬅️</button>
     <button class="btn btn-pink" onclick="clearBoard()">مسح اللوحة 🧹</button>
@@ -185,14 +187,12 @@
   <canvas id="drawCanvas" width="320" height="320"></canvas>
 </div>
 
-<!-- 5. تحدي النجوم -->
 <div id="screen-quiz" class="screen">
   <h2 id="quizQuestion">🌟 أين هو حرف الباء؟</h2>
-  <button class="btn" onclick="repeatQuiz()">🔊 أعد السؤال</button>
+  <button class="btn" onclick="repeatQuiz()">🗣️ أعد السؤال</button>
   <div class="options-row" id="quizOptions"></div>
 </div>
 
-<!-- 6. غرفة الجوائز -->
 <div id="screen-awards" class="screen">
   <h2>🏆 أوسمة وملصقات البطل</h2>
   <p>اجمع النجوم من الألعاب لتفتح كل الملصقات!</p>
@@ -201,34 +201,34 @@
 
 <script>
 const ALPHABET = [
-  { l: 'أ', name: 'ألف', word: 'أسد', emoji: '🦁' },
-  { l: 'ب', name: 'باء', word: 'بطة', emoji: '🦆' },
-  { l: 'ت', name: 'تاء', word: 'تفاحة', emoji: '🍎' },
-  { l: 'ث', name: 'ثاء', word: 'ثعلب', emoji: '🦊' },
-  { l: 'ج', name: 'جيم', word: 'جمل', emoji: '🐪' },
-  { l: 'ح', name: 'حاء', word: 'حصان', emoji: '🐴' },
-  { l: 'خ', name: 'خاء', word: 'خروف', emoji: '🐑' },
-  { l: 'د', name: 'دال', word: 'دب', emoji: '🐻' },
-  { l: 'ذ', name: 'ذال', word: 'ذرة', emoji: '🌽' },
-  { l: 'ر', name: 'راء', word: 'رمان', emoji: '🍎' },
-  { l: 'ز', name: 'زاي', word: 'زرافة', emoji: '🦒' },
-  { l: 'س', name: 'سين', word: 'سمكة', emoji: '🐟' },
-  { l: 'ش', name: 'شين', word: 'شمس', emoji: '☀️' },
-  { l: 'ص', name: 'صاد', word: 'صاروخ', emoji: '🚀' },
-  { l: 'ض', name: 'ضاد', word: 'ضفدع', emoji: '🐸' },
-  { l: 'ط', name: 'طاء', word: 'طائرة', emoji: '✈️' },
-  { l: 'ظ', name: 'ظاء', word: 'ظرف', emoji: '✉️' },
-  { l: 'ع', name: 'عين', word: 'عصفور', emoji: '🐦' },
-  { l: 'غ', name: 'غين', word: 'غزالة', emoji: '🦌' },
-  { l: 'ف', name: 'فاء', word: 'فيل', emoji: '🐘' },
-  { l: 'ق', name: 'قاف', word: 'قطة', emoji: '🐱' },
-  { l: 'ك', name: 'كاف', word: 'كلب', emoji: '🐶' },
-  { l: 'ل', name: 'لام', word: 'ليمون', emoji: '🍋' },
-  { l: 'م', name: 'ميم', word: 'موز', emoji: '🍌' },
-  { l: 'ن', name: 'نون', word: 'نحلة', emoji: '🐝' },
-  { l: 'هـ', name: 'هاء', word: 'هدية', emoji: '🎁' },
-  { l: 'و', name: 'واو', word: 'وردة', emoji: '🌹' },
-  { l: 'ي', name: 'ياء', word: 'يد', emoji: '✋' }
+  { slug: "alef", l: "أ", name: "ألف", word: "أسد", emoji: "🦁" },
+  { slug: "baa", l: "ب", name: "باء", word: "بطة", emoji: "🦆" },
+  { slug: "taa", l: "ت", name: "تاء", word: "تفاحة", emoji: "🍎" },
+  { slug: "thaa", l: "ث", name: "ثاء", word: "ثعلب", emoji: "🦊" },
+  { slug: "jeem", l: "ج", name: "جيم", word: "جمل", emoji: "🐪" },
+  { slug: "haa", l: "ح", name: "حاء", word: "حصان", emoji: "🐴" },
+  { slug: "khaa", l: "خ", name: "خاء", word: "خروف", emoji: "🐑" },
+  { slug: "daal", l: "د", name: "دال", word: "دب", emoji: "🐻" },
+  { slug: "dhaal", l: "ذ", name: "ذال", word: "ذرة", emoji: "🌽" },
+  { slug: "raa", l: "ر", name: "راء", word: "رمان", emoji: "🍎" },
+  { slug: "zaay", l: "ز", name: "زاي", word: "زرافة", emoji: "🦒" },
+  { slug: "seen", l: "س", name: "سين", word: "سمكة", emoji: "🐟" },
+  { slug: "sheen", l: "ش", name: "شين", word: "شمس", emoji: "☀️" },
+  { slug: "saad", l: "ص", name: "صاد", word: "صاروخ", emoji: "🚀" },
+  { slug: "daad", l: "ض", name: "ضاد", word: "ضفدع", emoji: "🐸" },
+  { slug: "taa_emph", l: "ط", name: "طاء", word: "طائرة", emoji: "✈️" },
+  { slug: "dhaa_emph", l: "ظ", name: "ظاء", word: "ظرف", emoji: "✉️" },
+  { slug: "ayn", l: "ع", name: "عين", word: "عصفور", emoji: "🐦" },
+  { slug: "ghayn", l: "غ", name: "غين", word: "غزالة", emoji: "🦌" },
+  { slug: "faa", l: "ف", name: "فاء", word: "فيل", emoji: "🐘" },
+  { slug: "qaaf", l: "ق", name: "قاف", word: "قطة", emoji: "🐱" },
+  { slug: "kaaf", l: "ك", name: "كاف", word: "كلب", emoji: "🐶" },
+  { slug: "laam", l: "ل", name: "لام", word: "ليمون", emoji: "🍋" },
+  { slug: "meem", l: "م", name: "ميم", word: "موز", emoji: "🍌" },
+  { slug: "noon", l: "ن", name: "نون", word: "نحلة", emoji: "🐝" },
+  { slug: "haa_end", l: "هـ", name: "هاء", word: "هدية", emoji: "🎁" },
+  { slug: "waaw", l: "و", name: "واو", word: "وردة", emoji: "🌹" },
+  { slug: "yaa", l: "ي", name: "ياء", word: "يد", emoji: "✋" }
 ];
 
 let stars = parseInt(localStorage.getItem('miro_stars') || '0');
@@ -246,24 +246,80 @@ function addStars(n) {
   document.getElementById('starCount').textContent = stars;
 }
 
-function speak(text) {
-  if (muted || !('speechSynthesis' in window)) return;
-  window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = 'ar-SA';
-  u.rate = 0.9;
-  window.speechSynthesis.speak(u);
+// Play bundled audio file from ./audio/ (works reliably in Capacitor Android WebView)
+function playAudioFile(filename) {
+  if (muted) return;
+  try {
+    const audio = new Audio('audio/' + filename);
+    audio.volume = 0.9;
+    const p = audio.play();
+    if (p && typeof p.catch === 'function') {
+      p.catch(() => {});
+    }
+  } catch (e) {}
+}
+
+// Speak Arabic text via device TTS when Arabic voice is installed
+function hasArabicTtsVoice() {
+  if (!('speechSynthesis' in window)) return false;
+  const voices = window.speechSynthesis.getVoices() || [];
+  return voices.some(v => (v.lang || '').toLowerCase().startsWith('ar'));
+}
+
+function refreshTtsNotice() {
+  if ('speechSynthesis' in window) {
+    const voices = window.speechSynthesis.getVoices() || [];
+    // Show gentle notice only if voices loaded and none is Arabic
+    if (voices.length > 0 && !hasArabicTtsVoice()) {
+      document.getElementById('ttsWarning').style.display = 'block';
+    } else if (hasArabicTtsVoice()) {
+      document.getElementById('ttsWarning').style.display = 'none';
+    }
+  }
+}
+
+if ('speechSynthesis' in window) {
+  window.speechSynthesis.onvoiceschanged = refreshTtsNotice;
+  setTimeout(refreshTtsNotice, 400);
+}
+
+function speak(text, fallbackAudio = null) {
+  if (muted) return;
+  if (fallbackAudio) {
+    playAudioFile(fallbackAudio);
+  }
+  if ('speechSynthesis' in window) {
+    try {
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'ar-SA';
+      utter.rate = 0.88;
+      utter.pitch = 1.12;
+      const voices = window.speechSynthesis.getVoices() || [];
+      const arVoice = voices.find(v => (v.lang || '').toLowerCase().startsWith('ar'));
+      if (arVoice) utter.voice = arVoice;
+      window.speechSynthesis.speak(utter);
+    } catch (e) {}
+  }
+}
+
+function miroGreet() {
+  const msg = 'أهلاً بك يا صديقي! أنا ميرو، هيا نتعلم الحروف العربية معاً ونجمع النجوم!';
+  document.getElementById('miroSpeech').textContent = msg;
+  speak(msg, 'welcome.wav');
 }
 
 function toggleMute() {
   muted = !muted;
   document.getElementById('muteBtn').textContent = muted ? '🔇 صامت' : '🔊 الصوت';
+  if (!muted) playAudioFile('welcome.wav');
 }
 
 function goHome() {
   clearInterval(balloonTimer);
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById('screen-home').classList.add('active');
+  playAudioFile('welcome.wav');
 }
 
 function openStation(name) {
@@ -282,12 +338,14 @@ function openStation(name) {
 function initIsland() {
   const grid = document.getElementById('lettersGrid');
   grid.innerHTML = '';
+  speak('اضغط على أي حرف لتسمع صوته وكلمته', 'welcome.wav');
   ALPHABET.forEach(item => {
     const div = document.createElement('div');
     div.className = 'letter-tile';
     div.innerHTML = `<div class="letter-char">${item.l}</div><div style="font-size:1.8rem">${item.emoji}</div><div class="letter-word">${item.word}</div>`;
     div.onclick = () => {
-      speak(`${item.name}.. ${item.word}`);
+      document.getElementById('islandBanner').textContent = `${item.l} — ${item.name} (${item.word} ${item.emoji})`;
+      speak(`${item.name}، ${item.word}`, `letter_${item.slug}.wav`);
       div.style.background = '#FFF3CD';
       setTimeout(() => div.style.background = 'white', 500);
     };
@@ -309,28 +367,31 @@ function initBalloons() {
     b.textContent = item.l;
     b.style.left = (10 + Math.random() * 75) + '%';
     b.style.background = colors[Math.floor(Math.random() * colors.length)];
-    b.style.animationDuration = (4.5 + Math.random() * 2) + 's';
+    b.style.animationDuration = (4.8 + Math.random() * 2) + 's';
     b.onclick = () => {
       if (item.l === targetBalloon.l) {
         b.remove();
         addStars(1);
-        speak('أحسنت يا بطل!');
+        speak('أحسنت يا بطل! لقد فرقعْت بالونة حرف ' + targetBalloon.name, 'success.wav');
+        setTimeout(() => playAudioFile('pop.wav'), 60);
         pickBalloonTarget();
       } else {
-        speak('حاول مرة أخرى، ابحث عن حرف ' + targetBalloon.name);
+        speak('حاول مرة أخرى، ابحث عن حرف ' + targetBalloon.name, 'try_again.wav');
       }
     };
     arena.appendChild(b);
-    setTimeout(() => b.remove(), 6500);
-  }, 1100);
+    setTimeout(() => b.remove(), 6800);
+  }, 1150);
 }
+
 function pickBalloonTarget() {
   targetBalloon = ALPHABET[Math.floor(Math.random() * ALPHABET.length)];
-  document.getElementById('targetBalloonLetter').textContent = targetBalloon.l;
+  document.getElementById('targetBalloonLetter').textContent = `${targetBalloon.l} (${targetBalloon.name})`;
   speakTargetBalloon();
 }
+
 function speakTargetBalloon() {
-  speak('فرقع بالونة حرف ' + targetBalloon.name);
+  speak('فرقع بالونة حرف ' + targetBalloon.name, `letter_${targetBalloon.slug}.wav`);
 }
 
 // 3. Train
@@ -338,7 +399,7 @@ function initTrain() {
   const item = ALPHABET[Math.floor(Math.random() * ALPHABET.length)];
   document.getElementById('trainEmoji').textContent = item.emoji;
   document.getElementById('trainWord').textContent = item.word;
-  speak(`ما هو الحرف الأول لكلمة ${item.word}؟`);
+  speak(`ما هو الحرف الأول لكلمة ${item.word}؟`, `letter_${item.slug}.wav`);
   const opts = [item];
   while (opts.length < 3) {
     const r = ALPHABET[Math.floor(Math.random() * ALPHABET.length)];
@@ -354,10 +415,10 @@ function initTrain() {
     c.onclick = () => {
       if (o.l === item.l) {
         addStars(2);
-        speak('ممتاز! توت توت انطلق القطار!');
-        setTimeout(initTrain, 1200);
+        speak(`ممتاز! ${item.l} أول حرف في ${item.word}`, 'success.wav');
+        setTimeout(initTrain, 1400);
       } else {
-        speak('جرب حرفاً آخر يا صديقي');
+        speak('جرب حرفاً آخر يا صديقي', 'try_again.wav');
       }
     };
     row.appendChild(c);
@@ -374,13 +435,13 @@ function initBoard() {
 function clearBoard() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   const item = ALPHABET[boardIdx];
-  document.getElementById('boardLetterLabel').textContent = item.l;
+  document.getElementById('boardLetterLabel').textContent = `${item.l} (${item.name})`;
   ctx.font = 'bold 210px Cairo, sans-serif';
   ctx.fillStyle = '#EAE0D5';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   ctx.fillText(item.l, 160, 175);
-  speak('تتبع حرف ' + item.name);
+  speak('تتبع حرف ' + item.name, `letter_${item.slug}.wav`);
 }
 function nextBoardLetter() {
   boardIdx = (boardIdx + 1) % ALPHABET.length;
@@ -421,17 +482,17 @@ function initQuiz() {
     c.onclick = () => {
       if (o.l === currentQuiz.l) {
         addStars(2);
-        speak('رائع! إجابة صحيحة');
-        setTimeout(initQuiz, 1100);
+        speak('رائع! إجابة صحيحة', 'success.wav');
+        setTimeout(initQuiz, 1200);
       } else {
-        speak('حاول مرة ثانية');
+        speak('حاول مرة ثانية', 'try_again.wav');
       }
     };
     row.appendChild(c);
   });
 }
 function repeatQuiz() {
-  speak('أين هو حرف ' + currentQuiz.name);
+  speak('أين هو حرف ' + currentQuiz.name, `letter_${currentQuiz.slug}.wav`);
 }
 
 // 6. Awards
@@ -444,12 +505,17 @@ function initAwards() {
   ];
   const grid = document.getElementById('awardsGrid');
   grid.innerHTML = '';
+  speak('هذه غرفة جوائزك يا بطل!', 'success.wav');
   badges.forEach(b => {
     const unlocked = stars >= b.req;
     const div = document.createElement('div');
     div.className = 'station-card';
     div.style.opacity = unlocked ? '1' : '0.45';
     div.innerHTML = `<div class="station-icon">${unlocked ? b.icon : '🔒'}</div><div class="station-title">${b.title}</div><div>مطلوب: ${b.req} نجمة</div>`;
+    div.onclick = () => {
+      if (unlocked) speak('أحسنت! لقد فتحت وسام ' + b.title, 'success.wav');
+      else speak('اجمع المزيد من النجوم لفتح هذا الوسام', 'try_again.wav');
+    };
     grid.appendChild(div);
   });
 }
