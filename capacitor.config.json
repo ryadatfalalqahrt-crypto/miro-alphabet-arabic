@@ -1,0 +1,6 @@
+{
+  "appId": "com.miro.alphabet.adventure",
+  "appName": "مغامرات الحروف مع ميرو",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
